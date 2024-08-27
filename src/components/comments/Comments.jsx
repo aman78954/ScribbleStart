@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Button } from '@material-tailwind/react';
 import myContext from '../../context/data/myContext';
 
-function Comment({ addComment, commentText, setcommentText, allComment, fullName, setFullName }) {
+function Comment({ addComment, commentText, setCommentText, allComment, fullName, setFullName }) {
   const context = useContext(myContext);
   const { mode } = context;
 
@@ -24,7 +24,7 @@ function Comment({ addComment, commentText, setcommentText, allComment, fullName
         >
           {/* Full Name Input */}
           <div
-            className="py-2 px-4 mb-4 rounded-lg rounded-t-lg shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] border border-gray-200"
+            className="py-2 px-4 mb-4 rounded-lg shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] border border-gray-200"
             style={{
               background: mode === 'dark' ? '#353b48' : 'rgb(226, 232, 240)',
             }}
@@ -43,7 +43,7 @@ function Comment({ addComment, commentText, setcommentText, allComment, fullName
 
           {/* Text Area */}
           <div
-            className="py-2 px-4 mb-4 rounded-lg rounded-t-lg shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] border border-gray-200"
+            className="py-2 px-4 mb-4 rounded-lg shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] border border-gray-200"
             style={{
               background: mode === 'dark' ? '#353b48' : 'rgb(226, 232, 240)',
             }}
@@ -53,7 +53,7 @@ function Comment({ addComment, commentText, setcommentText, allComment, fullName
               id="comment"
               rows={6}
               value={commentText}
-              onChange={(e) => setcommentText(e.target.value)}
+              onChange={(e) => setCommentText(e.target.value)}
               className="px-0 w-full text-sm border-0 focus:ring-0 focus:outline-none"
               style={{
                 background: mode === 'dark' ? '#353b48' : 'rgb(226, 232, 240)',
@@ -62,17 +62,17 @@ function Comment({ addComment, commentText, setcommentText, allComment, fullName
               required
             />
           </div>
+
           {/* Button */}
           <div>
             <Button
-             
               type="submit"
               style={{
                 background: mode === 'dark' ? 'rgb(226, 232, 240)' : 'rgb(30, 41, 59)',
                 color: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)',
               }}
             >
-              Post comment
+              Post Comment
             </Button>
           </div>
         </form>
