@@ -8,6 +8,10 @@ function AllBlogs() {
     const { mode, getAllBlog } = context;
 
     const navigate = useNavigate();
+    function stripHtmlTags(html) {
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  return doc.body.textContent || "";
+}
     return (
         <Layout>
             <section className="text-gray-600 body-font">
@@ -76,7 +80,7 @@ function AllBlogs() {
                                                             ? 'rgb(226, 232, 240)'
                                                             : ' rgb(30, 41, 59)'
                                                     }}>
-                                                        {item.blogs.content}
+                                                        {stripHtmlTags(item.blogs.content)}
                                                     </p>
                                                 </div>
                                             </div>
